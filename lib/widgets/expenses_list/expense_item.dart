@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_expense_tracker/models/expense.dart';
 import 'package:flutter_expense_tracker/expenses.dart';
+import 'package:flutter_expense_tracker/widgets/providers/providers.dart';
+import 'package:flutter_expense_tracker/widgets/providers/stateful_providers.dart';
 
 class ExpenseItem extends StatelessWidget {
   const ExpenseItem(this.registeredExpenses, {super.key});
@@ -36,6 +38,14 @@ class ExpenseItem extends StatelessWidget {
                     ],
                   )
                 ],
+              ),
+              Row(
+                children: [
+                  ProvidersPlay(),
+                ],
+              ),
+              const Row(
+                children: [Counter()],
               )
             ],
           )),

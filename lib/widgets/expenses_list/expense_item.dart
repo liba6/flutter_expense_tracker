@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_expense_tracker/models/expense.dart';
-import 'package:flutter_expense_tracker/expenses.dart';
-import 'package:flutter_expense_tracker/widgets/providers/providers.dart';
-import 'package:flutter_expense_tracker/widgets/providers/stateful_providers.dart';
+// import 'package:flutter_expense_tracker/expenses.dart';
+// import 'package:flutter_expense_tracker/widgets/providers/origin_provider.dart';
+// import 'package:flutter_expense_tracker/widgets/providers/counter_provider.dart';
 
 class ExpenseItem extends StatelessWidget {
   const ExpenseItem(this.registeredExpenses, {super.key});
@@ -18,8 +18,10 @@ class ExpenseItem extends StatelessWidget {
             vertical: 16,
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(registeredExpenses.title),
+              Text(registeredExpenses.title,
+                  style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 4),
               Row(
                 children: [
@@ -39,14 +41,14 @@ class ExpenseItem extends StatelessWidget {
                   )
                 ],
               ),
-              Row(
-                children: [
-                  ProvidersPlay(),
-                ],
-              ),
-              const Row(
-                children: [Counter()],
-              )
+              // Row(
+              //   children: [
+              //     ProvidersPlay(),
+              //   ],
+              // ),
+              // const Row(
+              //   children: [Counter()],
+              // )
             ],
           )),
     );
